@@ -1,0 +1,6 @@
+
+./target/release/substrate --chain chain-spec-raw.json -d data/validator1 --name validator1 --in-peers 256 --validator --ws-external --rpc-external --rpc-cors all --rpc-methods=unsafe --node-key 0x8b37357f14e2eceaf3b2d478aba9e57c3662fe47ca931d7316b9fad0d66cb280 
+
+./target/release/substrate --chain chain-spec-raw.json -d data/validator2 --name validator2 --validator --port 30334 --ws-port 9946 --rpc-port 9934 --ws-external --rpc-external --rpc-cors all --rpc-methods=unsafe 
+
+./target/release/substrate --chain chain-spec-raw.json -d data/validator3 --name validator3 --validator --port 30335 --ws-port 9947 --rpc-port 9935 --ws-external --rpc-external --rpc-cors all --rpc-methods=unsafe 

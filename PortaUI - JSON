@@ -1,0 +1,33 @@
+{
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copy": "u16",
+    "quantity": "u64"
+  },
+  "NFTv2_": {
+    "id": "Hash",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "issue": "Issuance",
+    "copy": "u16",
+    "amount": "u64",
+    "salt": "u32",
+    "price": "Balance",
+    "target": "BlockNumber",
+    "quantity": "u64"
+  },
+  "Issuance": {
+    "_enum": [
+      "unlimited",
+      "single",
+      "limited",
+      "stack"
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+		#[pallet::weight(10_000 + T::DbWeight::get().writes(1))]
+		fn transfer_single(origin: OriginFor<T>, from: T::AccountId, id: T::Hash, index: u16) -> DispatchResult {
+			let to = ensure_signed(origin)?;
+
+			let nft: NFTv2_<T> = NFTs::<T>::get((&from, id, index)).ok_or(Error::<T>::GetError)?;
+
+			let lot: NFTv2_<T> = Auction::<T>::get((&from, id, index)).ok_or(Error::<T>::GetError)?;
+
+			let sale_history: SaleHistory_<T> = SaleHistory {
+				block: <frame_system::Pallet<T>>::block_number(),
+				seller: from.clone(),
+				buyer: to.clone(),
+				price: lot.price,
+				copy: 1,
+				quantity: 1,
+			};
+
+			let purchase_id = T::Hashing::hash_of(&sale_history);
+
+			Auction::<T>::remove((&from, id, index));
+
+			NFTs::<T>::remove((&from, id, index));
+			NFTs::<T>::insert((&to, id, index), nft);
+
+			Database::<T>::insert((id, index), &to);
+
+			History::<T>::insert((id, purchase_id), sale_history);		
+
+			HistoryCounter::<T>::put(HistoryCounter::<T>::get().checked_add(1).ok_or(Error::<T>::U128Overflow)?);
+
+			// Self::deposit_event(Event::SomethingStored(something, caller));
+
+			Ok(())
+		}
+
+		#[pallet::weight(10_000 + T::DbWeight::get().writes(1))]
+		fn transfer_limited(origin: OriginFor<T>, from: T::AccountId, id: T::Hash, index: u16) -> DispatchResult {
+			let to = ensure_signed(origin)?;
+
+			let mut nft: NFTv2_<T> = NFTs::<T>::get((&from, id, index)).ok_or(Error::<T>::GetError)?;
+
+			let mut lot: NFTv2_<T> = Auction::<T>::get((&from, id, index)).ok_or(Error::<T>::GetError)?;
+
+			let sale_history: SaleHistory_<T> = SaleHistory {
+				block: <frame_system::Pallet<T>>::block_number(),
+				seller: from.clone(),
+				buyer: to.clone(),
+				price: lot.price,
+				copy: 1,
+				quantity: 1,
+			};
+
+			let purchase_id = T::Hashing::hash_of(&sale_history);
+
+
+			Auction::<T>::remove((&from, id, index));
+
+			NFTs::<T>::remove((&from, id, index));
+			NFTs::<T>::insert((&to, id, index), nft);
+
+			Database::<T>::insert((id, index), &to);
+
+			History::<T>::insert((id, purchase_id), sale_history);		
+
+			HistoryCounter::<T>::put(HistoryCounter::<T>::get().checked_add(1).ok_or(Error::<T>::U128Overflow)?);
+
+			// Self::deposit_event(Event::SomethingStored(something, caller));
+
+			Ok(())
+		}
+
+		#[pallet::weight(10_000 + T::DbWeight::get().writes(1))]
+		fn transfer_limited(origin: OriginFor<T>, from: T::AccountId, id: T::Hash, index: u16) -> DispatchResult {
+			let to = ensure_signed(origin)?;
+
+			let mut nft: NFTv2_<T> = NFTs::<T>::get((&from, id, index)).ok_or(Error::<T>::GetError)?;
+
+			let mut lot: NFTv2_<T> = Auction::<T>::get((&from, id, index)).ok_or(Error::<T>::GetError)?;
+
+			let sale_history: SaleHistory_<T> = SaleHistory {
+				block: <frame_system::Pallet<T>>::block_number(),
+				seller: from.clone(),
+				buyer: to.clone(),
+				price: lot.price,
+				copy: 1,
+				quantity: 1,
+			};
+
+			let purchase_id = T::Hashing::hash_of(&sale_history);
+
+			if nft.amount  == 1 {															// last copy is being sold
+
+				Auction::<T>::remove((&from, id, index));
+
+				NFTs::<T>::remove((&from, id, index));
+				NFTs::<T>::insert((&to, id, index), nft);
+
+				Database::<T>::insert((id, index), &to);
+
+			} else {
+				let mut sellers_nft = nft.clone();
+
+				let next_index: u16 = NextIndex::<T>::get(id);
+
+				lot.amount = lot.amount - 1;
+				lot.quantity = lot.quantity - 1;
+
+				sellers_nft.amount = sellers_nft.amount - 1;
+				sellers_nft.quantity = sellers_nft.quantity - 1;
+
+				nft.amount = 1;
+				
+				Auction::<T>::insert((&from, id, index), lot);
+				
+				NFTs::<T>::insert((&from, id, next_index), sellers_nft);
+
+				NFTs::<T>::insert((&to, id, index), nft);
+
+				Database::<T>::insert((id, next_index), &to);
+
+				NextIndex::<T>::insert(id, next_index + 1);
+			}
+			
+			History::<T>::insert((id, purchase_id), sale_history);		
+
+			HistoryCounter::<T>::put(HistoryCounter::<T>::get().checked_add(1).ok_or(Error::<T>::U128Overflow)?);
+
+			// Self::deposit_event(Event::SomethingStored(something, caller));
+
+			Ok(())
+		}

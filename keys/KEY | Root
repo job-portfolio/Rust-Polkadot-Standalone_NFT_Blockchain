@@ -1,0 +1,10 @@
+Root Key
+
+linux@linux-7200-5412A:~/Documents/BABE-node-02$ subkey generate --scheme sr25519
+Secret phrase `right exclude analyst scale chat cool cram order glare differ erosion close` is account:
+  Secret seed:       0x34968a2177449901420759c0d1ec5cd72c928e5990c23ffde0191703eeacb719
+  Public key (hex):  0x10dc8e7e4a4ec5061ab6fef71ee495e36fcd10994744dad3bb72a192f4f9d20e
+  Public key (SS58): 5CSp9D19M9wc7kd2efZ3iiRVVeUrV1pSaAQjbM55P2ZLdspa
+  Account ID:        0x10dc8e7e4a4ec5061ab6fef71ee495e36fcd10994744dad3bb72a192f4f9d20e
+  SS58 Address:      5CSp9D19M9wc7kd2efZ3iiRVVeUrV1pSaAQjbM55P2ZLdspa
+

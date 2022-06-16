@@ -1,0 +1,2 @@
+clear && cargo build --release && ./target/release/substrate purge-chain --dev
+./target/release/substrate --dev

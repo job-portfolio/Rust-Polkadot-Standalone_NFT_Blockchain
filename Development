@@ -1,0 +1,157 @@
+Development to-do list
+
+Send 1 billion tokens to faucet address.
+
+Implement
+
+- Implement bidding functionality
+- While the bidding is handled by the frontend, the NFT Pallet Buy Function will need to be purchase_price >= sale_price  
+- Change NFTv2 to NFT 
+- add events
+- encrypt on-chain NFT data using
+	- https://book.integritee.network/howto_private_tx.html
+	- https://github.com/LayerXcom/zero-chain
+- How to store different types of media and how to get them out.
+	- bytes to file?
+- put a CAP on the byte size of data for the moment.
+- add NFT collections
+	- A group of NFT's is a collection. e.g., a group of song NFT's are an album.
+	- A storageMap [?]:[list of NFT's]
+- on_finalise garbage collection for removing expired auction house entries.
+	- Create a storageMap for [target_block]:[List of auction_id's]
+	- if target_block = current_block THEN ::remove all auction_ids
+- add function so creator can increase the amount in stack of nft.
+	- Add quantity to empty nft in creators storageMap. Only creator account can add to supply.
+	- Automatically add it to the auction.
+- add fields: filename / format to NFT object
+- add fields: artists name, etc. to NFT object
+- adjust the privacy/visibility of functions, storage and other parts of the program
+- discover correct weighting for functions
+- limited size of NFT.
+	-Is this caused by the maximum size of a block? i.e. audio_file > max_block_size. 3.5 million bytes.
+ 	-Increase blocksize and block time
+- implement safe math (search for *, etc.)
+- NFT object: consider having special objects to house music-specific and art-specific data fields (e.g. track-length, art-collection).
+- Implement associated types so you can write T::Auction::remove() instead of Auction::<T>::remove()
+- Implement functionality for buying and selling shares
+- Implement convertor to change NFT's to different types of issuance
+	- will involving NextIndex functionality
+- create a key object that represents (accountId, Hash, u16) aka (owner, id, copy)
+- create function to remove NFT from auction.
+- write test code
+- Think: are the integer sizes correct?
+	- should index be u32/u64 rather than u16?
+	- should copy be u32/u64 rather than u16?
+- Should there be a Porta treasury fee that operated like royalty fee?
+	- When an NFT is minted, the porta treasury fee is acquired from a storagevalue set on-chain that can be adjusted.
+- salt security: after salt has been incremented for collision detection, return the salt to 0 before finalising the NFT.
+
+Other work
+
+- Consider PC backup.
+- Replicate node.guru's setup
+- change UNITS to PORTA. This is on the JSON chainspec of FIR
+- technical committee BadOrigin:Null
+- pwse minting issue, only 18 tokens max
+- tutorial for runtime upgrade process. This can be viewed on 'building a kitty' tutorial.
+- RPC-METHODS=unsafe. Take a look into this, I have created a bookmark for page I must read through.
+- Understand pallet weights and adapt NFT pallet accordingly
+- Look at panic error when node initially syncs to testnet
+- How to monitor validator nodes
+- How to monitor load balancer for connections?
+- Check validator node setup guide for sensitive information
+- Store SSH private key safely
+
+Think
+
+- think about use of .clone over & (with respect to leftover memory)
+- Ability for people to create their own bespoke nft's
+
+Info
+
+- screen -ls | screen -rd [number]
+- VPS providers: Digital Ocean, Hertzner, [node.guru mentioned]
+- NFT's only keep value when infinite divisibility has it basis in a singular usage right. 
+- Please refer to my message in Porta-Discussion on 27.08.2021 at 10:46 - https://discord.com/channels/849974891868192768/874602689382731776/880750206830907412
+- sudo htop
+- 1_000_000_000_000 = 1 unit  on Padlock
+- pNFT, pGAME, pSMART, pSTORE, pASSET, pTEST
+- VS Code Remote Explorer
+- You can request tokens from the Porta Faucet here: https://faucet.porta.network/ 🙂
+- ls -la
+- Putty: CRTL+C (copy) | SHIFT+INSERT (paste)
+- NFT Pallet:
+	- 2MB max storage in Vec<u8>
+	- 4MB causes 'block size exceeded' error
+	- idea: change Vec<u8> to Vec<u16>
+
+Please do the following:
+- Check your node is running on server
+- Check your stash account has bonded funds to a controller account
+- Check your controller account has 200+ tokens
+- Check your reward account has 100+ tokens
+- RotateKeys(), add session keys and validate
+- If the above does not solve the problem, try deleting the data folder and sync the node to the network again.
+- If the above does not solve the problem, try creating a new stash, controller and reward account and linking that you your node.
+- If still not working, scrap the node and rebuild it.
+
+
+
+Commands
+./target/release/substrate purge-chain --dev
+clear && cargo check && cargo build --release
+Nano: Alt+6 (copy) | Crtl+U (paste)
+Convert Private key to PPK: puttygen ssh_key_pair -o ssh_key_pair.ppk
+poweroff
+author.rotateKeys() | session.setKeys
+cargo +nightly-2020-08-23 build --release
+cargo +nightly-2020-08-23 run --release -- --dev --tmp
+cargo update -p snow --precise 0.7.3
+	cargo clean
+	git stash
+	rm -rf Cargo.lock 
+	cargo build --release
+cargo tree -d
+journalctl -u porta.service -o cat | grep 'era \|Pre-sealed' | tail -n 5
+
+Debug
+print("INCREMENTING SALT");
+frame_support::debug(&price);
+RUST_LOG=runtime=debug ./target/release/substrate --dev -lruntime=debug
+
+
+Add to Notion
+- add copies
+	- fund transfer:
+		- change price in parameter to: price * copies.
+		- do the same for royalty
+	- adapt the transfer function to copies
+- add sale_history
+- id collision detection
+- sales_history
+	- global list
+	- store multiple entries
+	- unique purchase_id
+- unique purchase id
+- Move from storageMap to StorageDoubleMap
+	- Auction
+	- History
+	- Database
+	- NFT
+- Build 4 types of NFT
+	- single
+	- limited
+	- unlimited
+	- stack
+- Test lifecycle 4 types of NFT: Mint > Sell > Buy > Burn | History; Database; Auction
+	- single
+	- limited
+	- unlimited
+	- stack
+- Hide functions from Porta-UI. PERHAPS CAUSED BY A FUNDAMENTAL PUB, REMOVE AND ADD PUB(SUPER) TO FUNCS.
+	- transfer_single
+	- transfer_limited
+	- transfer_unlimited
+	- transfer_stack
+	- increment_stack
+

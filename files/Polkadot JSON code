@@ -1,0 +1,137 @@
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "sale_info": "SaleInfo_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>"
+  }
+}
+
+==========================================
+
+{
+  "TokenInfoOf": {
+    "owner": "AccountId",
+    "nft_id": "H256"
+  },
+  "TokenInfoTwoOf": {
+    "owner": "AccountId",
+    "nft_id": "H256",
+    "ipfs_url": "Vec<u8>"
+  },
+  "TokenInfoFinalOf": {
+    "ipfs_id": "Vec<u8>"
+  },
+  "AcctInfoOf": {
+    "owner": "AccountId"
+  },
+  "HshInfoOf": {
+    "nft_id": "H256"
+  },
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "sale_info": "SaleInfo_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>"
+  }
+}
+
+===============
+
+{
+  "TokenInfoOf": {
+    "owner": "AccountId",
+    "nft_id": "H256"
+  },
+  "TokenInfoTwoOf": {
+    "owner": "AccountId",
+    "nft_id": "H256",
+    "ipfs_url": "Vec<u8>"
+  },
+  "TokenInfoFinalOf": {
+    "ipfs_id": "Vec<u8>"
+  },
+  "AcctInfoOf": {
+    "owner": "AccountId"
+  },
+  "HshInfoOf": {
+    "nft_id": "H256"
+  },
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>"
+  }
+}
+
+=========== OLD ===========
+
+{
+  "TokenInfoOf": {
+    "owner": "AccountId",
+    "nft_id": "H256"
+  },
+  "TokenInfoTwoOf": {
+    "owner": "AccountId",
+    "nft_id": "H256",
+    "ipfs_url": "Vec<u8>"
+  },
+  "TokenInfoFinalOf": {
+    "ipfs_id": "Vec<u8>"
+  },
+  "AcctInfoOf": {
+    "owner": "AccountId"
+  },
+  "HshInfoOf": {
+    "nft_id": "H256"
+  }
+}

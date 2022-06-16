@@ -1,0 +1,502 @@
+
+{
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copy": "u16",
+    "quantity": "u64"
+  },
+  "NFTv2_": {
+    "id": "Hash",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "issue": "Issuance",
+    "copy": "u16",
+    "amount": "u64",
+    "salt": "u32",
+    "price": "Balance",
+    "target": "BlockNumber",
+    "quantity": "u64"
+  },
+  "Issuance": {
+    "_enum": [
+      "unlimited",
+      "single",
+      "limited",
+      "stack"
+    ]
+  }
+}
+
+==========================
+
+{
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copies": "u16"
+  },
+  "NFTv2_": {
+    "id": "Hash",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "issue": "Issuance",
+    "copy": "u16",
+    "amount": "u64",
+    "salt": "u32",
+    "price": "Balance",
+    "target": "BlockNumber",
+    "quantity": "u16"
+  },
+  "Issuance": {
+    "_enum": [
+      "unlimited",
+      "single",
+      "limited"
+    ]
+  }
+}
+
+=====================
+
+{
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copies": "u16"
+  },
+  "NFTv2_": {
+    "id": "Hash",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "issue": "Issuance",
+    "copy": "u16",
+    "amount": "u64",
+    "salt": "u32",
+    "price": "Balance",
+    "target": "BlockNumber",
+    "quantity": "u16"
+  },
+  "Issuance": {
+    "_enum": [
+      "unlimited",
+      "single"
+    ]
+  }
+}
+
+====================
+
+{
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copies": "u16"
+  },
+  "NFTv2_": {
+    "id": "Hash",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "issue": "Issuance",
+    "copies": "u16",
+    "salt": "u32",
+    "price": "Balance",
+    "target": "BlockNumber",
+    "quantity": "u16"
+  },
+  "Issuance": {
+    "_enum": [
+      "unlimited",
+      "single"
+    ]
+  }
+}
+
+========
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber",
+    "copies": "u16"
+  },
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copies": "u16"
+  },
+  "NFTv2_": {
+    "id": "Hash",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "issue": "Issuance",
+    "copies": "u16",
+    "salt": "u32",
+    "price": "Balance",
+    "target": "BlockNumber",
+    "quantity": "u16"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u16",
+    "sale_info": "SaleInfo_",
+    "sale_history": "SaleHistory_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>",
+    "copies": "u16",
+    "date": "BlockNumber"
+  },
+  "Issuance": {
+    "_enum": [
+      "unlimited",
+      "single"
+    ]
+  }
+}
+
+================
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber",
+    "copies": "u16"
+  },
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copies": "u16"
+  },
+  "NFTv2_": {
+    "id": "Hash",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u16",
+    "salt": "u32",
+    "price": "Balance",
+    "target": "BlockNumber",
+    "quantity": "u16"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u16",
+    "sale_info": "SaleInfo_",
+    "sale_history": "SaleHistory_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>",
+    "copies": "u16",
+    "date": "BlockNumber"
+  }
+}
+
+=======================
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber",
+    "copies": "u16"
+  },
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copies": "u16"
+  },
+  "NFTv2_": {
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u16",
+    "sale_info": "SaleInfo_",
+    "sale_history": "SaleHistory_",
+    "salt" : "u32"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u16",
+    "sale_info": "SaleInfo_",
+    "sale_history": "SaleHistory_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>",
+    "copies": "u16",
+    "date": "BlockNumber"
+  }
+}
+
+==========================
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber",
+    "copies": "u16"
+  },
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copies": "u16"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u16",
+    "sale_info": "SaleInfo_",
+    "sale_history": "SaleHistory_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>",
+    "copies": "u16",
+    "date": "BlockNumber"
+  }
+}
+
+==================
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber",
+    "copies": "u32"
+  },
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copies": "u32"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "date": "BlockNumber",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u32",
+    "sale_info": "SaleInfo_",
+    "sale_history": "SaleHistory_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>",
+    "copies": "u32",
+    "date": "BlockNumber"
+  }
+}
+
+====================
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber",
+    "copies": "u32"
+  },
+  "SaleHistory_": {
+    "block": "BlockNumber",
+    "seller": "AccountId",
+    "buyer": "AccountId",
+    "price": "u128",
+    "copies": "u32"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u32",
+    "sale_info": "SaleInfo_",
+    "sale_history" : "SaleHistory_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>",
+    "copies": "u32"
+  }
+}
+
+=========
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber",
+    "copies": "u32"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u32",
+    "sale_info": "SaleInfo_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>",
+    "copies": "u32"
+  }
+}
+
+
+==============
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "sale_info": "SaleInfo_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>"
+  }
+}
+
+
+{
+  "SaleInfo_": {
+    "auction_id": "H256",
+    "price": "u128",
+    "target": "BlockNumber",
+    "copies": "u32"
+  },
+  "NFT_": {
+    "id": "H256",
+    "creator": "AccountId",
+    "royalty": "u8",
+    "share": "u8",
+    "data": "Vec<u8>",
+    "copies": "u32",
+    "sale_info": "SaleInfo_"
+  },
+  "Auction_": {
+    "creator": "AccountId",
+    "seller": "AccountId",
+    "share": "u8",
+    "price": "u128",
+    "royalty": "u8",
+    "target": "BlockNumber",
+    "sample": "Vec<u8>",
+    "copies": "u32"
+  }
+}

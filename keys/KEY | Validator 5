@@ -1,0 +1,27 @@
+
+user-stash
+pass
+
+enforce home divert can outer muffin room wear lava transfer still south
+
+-----------------
+
+user-controller
+pass
+
+spike icon between trick maid man upon tobacco nerve jacket adult melody
+
+-----------------
+
+user-rewards
+pass
+
+boost ginger crime ladder indoor put liquid shallow gallery wise critic sudden
+
+-----------------
+
+Rotated keys
+
+0x7c5cbf047a7299983eb2461033aca22248ff0b8a0ccab80a2f596a4d5c0a6c11984750848e0166089b0532866085041d35d978ad58e9c37c5d5c8e489018d643ca3e945e9b07c00debf51093e7056ee7cc4cdf94314fcc2d8f5fe8df38216260386ef985dfd169a0bbf04705b6545fe325c1abf3d3bb1a3f2b9047b4992c2a2c
+
+./target/release/substrate --chain chain-spec-raw.json -d data/validator5 --name validator5 --validator --port 30337 --ws-port 9949 --rpc-port 9937 --ws-external --rpc-external --rpc-cors all --rpc-methods=unsafe 

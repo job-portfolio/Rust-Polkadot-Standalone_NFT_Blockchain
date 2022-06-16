@@ -1,0 +1,10 @@
+Node Key
+
+linux@linux-7200-5412A:~/Documents/BABE-node-02$ subkey generate --scheme ed25519
+Secret phrase `vault absent race elbow reform punch define word imitate unique inside south` is account:
+  Secret seed:       0x91b25d96908300c903fe97f5760f96aa9615638d6cd698143c86d09d40642355
+  Public key (hex):  0x8b37357f14e2eceaf3b2d478aba9e57c3662fe47ca931d7316b9fad0d66cb280
+  Public key (SS58): 5FDEuwghrfjwxUTEZ3E8nQdiWZuU88m2KMg5sGmBDpkPjyWy
+  Account ID:        0x8b37357f14e2eceaf3b2d478aba9e57c3662fe47ca931d7316b9fad0d66cb280
+  SS58 Address:      5FDEuwghrfjwxUTEZ3E8nQdiWZuU88m2KMg5sGmBDpkPjyWy
+

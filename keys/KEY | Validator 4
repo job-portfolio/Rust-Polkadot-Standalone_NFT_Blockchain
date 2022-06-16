@@ -1,0 +1,61 @@
+KEY | Valiator 4
+
+validator-stash
+pass
+
+avocado core plunge mesh soft differ hen income decide million hand success
+
+5FjYLVUTB6u2eNcsaxewi7LadSchcDMgwjVzKW42i6J9j2Xh
+
+linux@linux-7200-5412A:~/Documents/BABE-node-04/scripts/session_keys$ subkey inspect --scheme sr25519 "avocado core plunge mesh soft differ hen income decide million hand success"
+Secret phrase `avocado core plunge mesh soft differ hen income decide million hand success` is account:
+  Secret seed:       0xa7f3b906b44b4161b291a4df2632a24f8097ff76447ca8a9d711507a246e852c
+  Public key (hex):  0xa253391437458cfb2a3422d542291ca523b8336ad98447825f9e925bfab17e26
+  Public key (SS58): 5FjYLVUTB6u2eNcsaxewi7LadSchcDMgwjVzKW42i6J9j2Xh
+  Account ID:        0xa253391437458cfb2a3422d542291ca523b8336ad98447825f9e925bfab17e26
+  SS58 Address:      5FjYLVUTB6u2eNcsaxewi7LadSchcDMgwjVzKW42i6J9j2Xh
+
+
+-------------
+
+validator-controller
+pass
+
+purity insect response panel orchard solid other midnight vacant unhappy brass sick
+
+5EbpwLqJE1AA9HWnT6GADuQnQvH9XPQTqPqK3PE9JTW73W6g
+
+linux@linux-7200-5412A:~/Documents/BABE-node-04/scripts/session_keys$ subkey inspect --scheme sr25519 "purity insect response panel orchard solid other midnight vacant unhappy brass sick"
+Secret phrase `purity insect response panel orchard solid other midnight vacant unhappy brass sick` is account:
+  Secret seed:       0x5cda88cde8ec755e4aefda4f18ee3ddc6fc404e69c547d6a4856527210e89ae9
+  Public key (hex):  0x7034e8e9eebac7d82a9d7fffcae20ee0367156b09cc50f0940ac3d9b64235524
+  Public key (SS58): 5EbpwLqJE1AA9HWnT6GADuQnQvH9XPQTqPqK3PE9JTW73W6g
+  Account ID:        0x7034e8e9eebac7d82a9d7fffcae20ee0367156b09cc50f0940ac3d9b64235524
+  SS58 Address:      5EbpwLqJE1AA9HWnT6GADuQnQvH9XPQTqPqK3PE9JTW73W6g
+  
+--------------
+
+validator-rewards
+
+drop ripple state they example jungle brave pumpkin illegal color camp shiver
+
+linux@linux-7200-5412A:~/Documents/BABE-node-04/scripts/session_keys$ subkey inspect --scheme sr25519 "drop ripple state they example jungle brave pumpkin illegal color camp shiver"
+Secret phrase `drop ripple state they example jungle brave pumpkin illegal color camp shiver` is account:
+  Secret seed:       0x4a3ecfe3b1d8707ac82f1a03ab1fa96508780a50a2882bdec0a57e589f9e09c0
+  Public key (hex):  0xa4a524cceadfaec45d66f38db45238801c3de8ce101fcca161430d135a52bf74
+  Public key (SS58): 5FnamWTPo3YXrUX9SEov5wm768gAmaBUdrsJpYfanZMcWRcc
+  Account ID:        0xa4a524cceadfaec45d66f38db45238801c3de8ce101fcca161430d135a52bf74
+  SS58 Address:      5FnamWTPo3YXrUX9SEov5wm768gAmaBUdrsJpYfanZMcWRcc
+
+--------------
+
+./target/release/substrate --chain chain-spec-raw.json -d data/validator4 --name validator4 --validator --port 30336 --ws-port 9948 --rpc-port 9936 --ws-external --rpc-external --rpc-cors all --rpc-methods=unsafe 
+
+--------------
+
+rotatekeys
+
+0xb36ec789c48e8b061a7ccf41b1e6332ab5c2b60b6742a30d8efe27113ee2fabd72e0009421248021140f9377df53750625f2915acb2005b9452c2d7a7c7ab45c024b287f8cdd701a1eb45f8d85b2ab86713d1c41683d53ea2aa569e7a027fa1b34f956cbe86d3e4e75d9e4fad1f7c796e318e180fa5517ad95fae4791bfa5e47
+
+
+
